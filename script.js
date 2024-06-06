@@ -1,38 +1,30 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     const navLinks = document.querySelectorAll('nav a');
-//     const sections = document.querySelectorAll('section');
-  
-//     navLinks.forEach(link => {
-//       link.addEventListener('mouseover', function() {
-//         navLinks.forEach(link => link.classList.remove('active'));
-//         link.classList.add('active');
-//       });
-//     });
-  
-//     window.addEventListener('scroll', function() {
-//       let current = '';
-  
-//       sections.forEach(section => {
-//         const sectionTop = section.offsetTop;
-//         const sectionHeight = section.clientHeight;
-//         if (pageYOffset >= sectionTop - sectionHeight / 3) {
-//           current = section.getAttribute('id');
-//         }
-//       });
-  
-//       navLinks.forEach(link => {
-//         link.classList.remove('active');
-//         if (link.getAttribute('href').substring(1) === current) {
-//           link.classList.add('active');
-//         }
-//       });
-//     });
-//   });
-  
+document.addEventListener("DOMContentLoaded", function() {
+  const navLinks = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('section');
 
-  // src/script.js
+  // Highlight the active navigation link based on scroll position
+  window.addEventListener('scroll', function() {
+    let current = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').substring(1) === current) {
+        link.classList.add('active');
+      }
+    });
+  });
+});
+
+// Smooth scroll to target element
 function smoothScroll(target) {
-  console.log("Script is running!");
   var targetElement = document.querySelector(target);
   var startPosition = window.pageYOffset;
   var targetPosition = targetElement.getBoundingClientRect().top + startPosition;
@@ -62,14 +54,13 @@ function smoothScroll(target) {
 window.addEventListener('scroll', function() {
   var windowHeight = window.innerHeight;
   var documentHeight = document.body.scrollHeight;
-  var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   var distanceFromBottom = documentHeight - (scrollTop + windowHeight);
 
-  if (distanceFromBottom < 100) { // Atur threshold sesuai kebutuhan
-    var bumper = document.querySelector('.bumper');
+  var bumper = document.querySelector('.bumper');
+  if (distanceFromBottom < 100) { // Adjust threshold as needed
     bumper.classList.add('active');
   } else {
-    var bumper = document.querySelector('.bumper');
     bumper.classList.remove('active');
   }
 });

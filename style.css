@@ -145,6 +145,32 @@ nav a:hover {
   background-color: #698c8c; /* Contact section button hover background color */
 }
 
+
+/* Infinite Scroll */
+.infinite-scroll {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: rgba(255, 255, 255, 0.9); /* Adjust background color as needed */
+  padding: 20px;
+}
+
+/* Icon group styling */
+.icon-group {
+  margin-bottom: 20px;
+}
+
+/* Individual icon styling */
+.icon {
+  width: 50px; /* Adjust icon size as needed */
+  height: 50px; /* Adjust icon size as needed */
+  margin-right: 10px;
+}
+
+
+
 /* Bumper styles */
 .bumper {
   position: fixed;

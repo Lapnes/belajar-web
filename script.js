@@ -1,41 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const navLinks = document.querySelectorAll('nav a');
-  const sections = document.querySelectorAll('section');
-
-  // Highlight the active navigation link based on scroll position
-  window.addEventListener('scroll', function() {
-    let current = '';
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (pageYOffset >= sectionTop - sectionHeight / 3) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').substring(1) === current) {
-        link.classList.add('active');
-      }
-    });
-  });
-});
-
-// Smooth scroll to target element
+// Smooth scroll function
 function smoothScroll(target) {
-  var targetElement = document.querySelector(target);
-  var startPosition = window.pageYOffset;
-  var targetPosition = targetElement.getBoundingClientRect().top + startPosition;
-  var distance = targetPosition - startPosition;
-  var startTime = null;
-  var duration = 800; // Adjust the duration as needed
+  const targetElement = document.querySelector(target);
+  const startPosition = window.pageYOffset;
+  const targetPosition = targetElement.getBoundingClientRect().top + startPosition;
+  const distance = targetPosition - startPosition;
+  const duration = 800; // Adjust the duration as needed
+  let startTime = null;
 
   function animation(currentTime) {
     if (startTime === null) startTime = currentTime;
-    var timeElapsed = currentTime - startTime;
-    var run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+    const timeElapsed = currentTime - startTime;
+    const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
     window.scrollTo(0, run);
     if (timeElapsed < duration) requestAnimationFrame(animation);
   }
@@ -50,17 +25,53 @@ function smoothScroll(target) {
   requestAnimationFrame(animation);
 }
 
+// Event listener for smooth scroll on nav link click
+document.addEventListener("DOMContentLoaded", function() {
+  const navLinks = document.querySelectorAll('nav a');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = link.getAttribute('href');
+      smoothScroll(target);
+    });
+  });
+});
+
+// Auto-highlight active nav link on scroll
+window.addEventListener('scroll', function() {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+  let current = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').substring(1) === current) {
+      link.classList.add('active');
+    }
+  });
+});
+
 // Add bumper when scrolling to the bottom
 window.addEventListener('scroll', function() {
-  var windowHeight = window.innerHeight;
-  var documentHeight = document.body.scrollHeight;
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  var distanceFromBottom = documentHeight - (scrollTop + windowHeight);
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.body.scrollHeight;
+  const scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+  const distanceFromBottom = documentHeight - (scrollTop + windowHeight);
 
-  var bumper = document.querySelector('.bumper');
   if (distanceFromBottom < 100) { // Adjust threshold as needed
+    const bumper = document.querySelector('.bumper');
     bumper.classList.add('active');
   } else {
+    const bumper = document.querySelector('.bumper');
     bumper.classList.remove('active');
   }
 });

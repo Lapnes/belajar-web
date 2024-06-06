@@ -2,11 +2,26 @@ style.css
 
 /* Body styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4d9c7; /* Background color */
-    color: #4a4a4a; /* Text color */
-  }
-  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling on the body */
+}
+
+.container {
+    max-width: 100%;
+    padding: 0 15px; /* Add padding to container to prevent content from touching the edges */
+}
+/* Additional responsive styles */
+.hero-section,
+.about-section,
+.portfolio-section,
+.contact-section {
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling within sections */
+    padding: 0 15px; /* Prevent content from touching the edges */
+}
+
   /* Navbar styles */
   nav {
     background-color: #94716b; /* Navbar background color */
@@ -38,7 +53,7 @@ nav a:hover {
     background-color: #fff; /* Warna latar belakang */
   }
 
-
+/* Media queries for responsive design */
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 2xl; /* Adjust font size for smaller screens */

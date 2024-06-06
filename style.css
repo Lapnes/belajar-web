@@ -1,139 +1,115 @@
-style.css
-
 /* Body styles */
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal scrolling on the body */
+  font-family: 'Arial', sans-serif;
+  background-color: #f4d9c7; /* Background color */
+  color: #4a4a4a; /* Text color */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-.container {
-    max-width: 100%;
-    padding: 0 15px; /* Add padding to container to prevent content from touching the edges */
-}
-/* Additional responsive styles */
-.hero-section,
-.about-section,
-.portfolio-section,
-.contact-section {
-    max-width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling within sections */
-    padding: 0 15px; /* Prevent content from touching the edges */
-}
-
-  /* Navbar styles */
-  nav {
-    background-color: #94716b; /* Navbar background color */
-}
-
-nav .container {
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent breaking into new lines */
+/* Navbar styles */
+nav {
+  background-color: #94716b; /* Navbar background color */
 }
 
 nav a {
-    color: #e8c8a1; /* Navbar link color */
-    display: inline-block; /* Ensure the links are inline */
-    padding: 0 15px; /* Add some padding to the links */
+  color: #e8c8a1; /* Navbar link color */
 }
 
 nav a:hover {
-    color: #4e7979; /* Navbar link hover color */
-}
-  
-
-  .paragraph {
-    font-size: 18px; /* Ukuran font yang lebih besar */
-    font-weight: bold; /* Font tebal */
-    color: #333; /* Warna teks */
-    margin-bottom: 20px; /* Margin bawah yang lebih besar */
-    padding: 10px; /* Padding untuk memisahkan paragraf */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan */
-    background-color: #fff; /* Warna latar belakang */
-  }
-
-/* Media queries for responsive design */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2xl; /* Adjust font size for smaller screens */
-    }
-
-    .about-section .container, 
-    .portfolio-section .container, 
-    .contact-section .container {
-        padding: 0 10px; /* Reduce padding on smaller screens */
-    }
-
-    .portfolio-section .grid-cols-1 {
-        grid-template-columns: 1fr; /* Ensure projects stack vertically on small screens */
-    }
+  color: #4e7979; /* Navbar link hover color */
 }
 
-  /* Hero section styles */
-  .hero-section {
-    background-color: #e8c8a1; /* Hero section background color */
+/* Paragraph styles */
+.paragraph {
+  font-size: 18px; /* Larger font size */
+  font-weight: bold; /* Bold font */
+  color: #333; /* Text color */
+  margin-bottom: 20px; /* Larger bottom margin */
+  padding: 10px; /* Padding to separate paragraphs */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  background-color: #fff; /* Background color */
+}
+
+/* Hero section styles */
+.hero-section {
+  background-color: #e8c8a1; /* Hero section background color */
+}
+
+.hero-section h1 {
+  color: #4a4a4a; /* Hero section text color */
+}
+
+.hero-section p {
+  color: #7a7575; /* Hero section text color */
+}
+
+/* About section styles */
+.about-section {
+  background-color: #f4d9c7; /* About section background color */
+}
+
+.about-section h2 {
+  color: #4a4a4a; /* About section text color */
+}
+
+.about-section p {
+  color: #7a7575; /* About section text color */
+}
+
+/* Portfolio section styles */
+.portfolio-section {
+  background-color: #e8c8a1; /* Portfolio section background color */
+}
+
+.portfolio-section h2 {
+  color: #4a4a4a; /* Portfolio section text color */
+}
+
+/* Contact section styles */
+.contact-section {
+  background-color: #94716b; /* Contact section background color */
+}
+
+.contact-section h2 {
+  color: #e8c8a1; /* Contact section text color */
+}
+
+.contact-section a {
+  background-color: #4e7979; /* Contact section button background color */
+  color: #f4d9c7; /* Contact section button text color */
+}
+
+.contact-section a:hover {
+  background-color: #698c8c; /* Contact section button hover background color */
+}
+
+/* Bumper styles */
+.bumper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px; /* Adjust bumper height as needed */
+  background-color: rgba(0, 0, 0, 0); /* Initial background color */
+  transition: background-color 0.5s ease; /* Background color transition animation */
+  z-index: 9999; /* Ensure bumper is above other content */
+}
+
+.bumper.active {
+  background-color: rgba(0, 0, 0, 0.5); /* Background color when bumper is active */
+}
+
+/* Responsive design adjustments */
+@media (min-width: 768px) {
+  .flex-col {
+    flex-direction: row;
   }
-  
-  .hero-section h1 {
-    color: #4a4a4a; /* Hero section text color */
+}
+
+@media (max-width: 767px) {
+  .flex-row {
+    flex-direction: column;
   }
-  
-  .hero-section p {
-    color: #7a7575; /* Hero section text color */
-  }
-  
-  /* About section styles */
-  .about-section {
-    background-color: #f4d9c7; /* About section background color */
-  }
-  
-  .about-section h2 {
-    color: #4a4a4a; /* About section text color */
-  }
-  
-  .about-section p {
-    color: #7a7575; /* About section text color */
-  }
-  
-  /* Portfolio section styles */
-  .portfolio-section {
-    background-color: #e8c8a1; /* Portfolio section background color */
-  }
-  
-  .portfolio-section h2 {
-    color: #4a4a4a; /* Portfolio section text color */
-  }
-  
-  /* Contact section styles */
-  .contact-section {
-    background-color: #94716b; /* Contact section background color */
-  }
-  
-  .contact-section h2 {
-    color: #e8c8a1; /* Contact section text color */
-  }
-  
-  .contact-section a {
-    background-color: #4e7979; /* Contact section button background color */
-    color: #f4d9c7; /* Contact section button text color */
-  }
-  
-  .contact-section a:hover {
-    background-color: #698c8c; /* Contact section button hover background color */
-  }
-  
-  .bumper {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10px; /* Atur tinggi bumper sesuai kebutuhan Anda */
-    background-color: rgba(0, 0, 0, 0); /* Atur warna sesuai kebutuhan Anda */
-    transition: background-color 0.5s ease; /* Animasi transisi warna latar belakang */
-    z-index: 9999; /* Pastikan bumper muncul di atas konten lain */
-  }
-  
-  .bumper.active {
-    background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang saat bumper aktif */
-  }
+}

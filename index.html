@@ -15,8 +15,9 @@
   </head>
 <body>
 <!-- Navbar -->
-<nav class="bg-gray-800 py-4 fixed w-full z-10">
-    <div class="container mx-auto flex items-center justify-between">
+
+  <nav class="bg-gray-800 py-4 fixed w-full z-10">
+    <div class="container mx-auto flex items-center justify-between overflow-x-auto whitespace-nowrap">
       <a href="#" class="text-white text-2xl font-bold">Tenzly: Web The Series</a>
       <div class="flex items-center space-x-4">
         <a href="#about" class="text-white hover:text-gray-300 transition duration-300" onclick="smoothScroll('#about')">About</a>
@@ -25,18 +26,17 @@
         <a href="#contact" class="text-white hover:text-gray-300 transition duration-300" onclick="smoothScroll('#contact')">Contact</a>
       </div>
     </div>
-  </nav>
-  
+</nav>
   
 
-  <!-- Hero Section -->
-  <section id="hero" class="bg-gray-200 py-20 px-4 text-center hero-section">
-    <div class="container mx-auto">
-      <h1 class="text-4xl font-bold mb-4">Welcome Tenzly __ Be Happies Okey</h1>
-      <p class="text-lg text-gray-700">Progres Belajar Bikin Website dari 0: Week 1 | Day 1</p>
-    </div>
-  </section>
-
+<!-- Hero Section -->
+<section id="hero" class="bg-gray-200 py-20 px-4 text-center hero-section">
+  <div class="container mx-auto">
+    <h1 class="text-4xl font-bold mb-4">Welcome Tenzly __ Be Happies Okey</h1>
+    <p class="text-lg text-gray-700">Progres Belajar Bikin Website dari 0: Week 1 | Day 1</p>
+  </div>
+</section>
+  
 <!-- About Section -->
 <section id="about" class="py-20 px-4 about-section" data-aos="fade-up">
   <div class="container mx-auto">
@@ -124,6 +124,7 @@
   </footer>
 
   <!-- AOS JS -->
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init();

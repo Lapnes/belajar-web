@@ -10,15 +10,22 @@ body {
   /* Navbar styles */
   nav {
     background-color: #94716b; /* Navbar background color */
-  }
-  
-  nav a {
+}
+
+nav .container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent breaking into new lines */
+}
+
+nav a {
     color: #e8c8a1; /* Navbar link color */
-  }
-  
-  nav a:hover {
+    display: inline-block; /* Ensure the links are inline */
+    padding: 0 15px; /* Add some padding to the links */
+}
+
+nav a:hover {
     color: #4e7979; /* Navbar link hover color */
-  }
+}
   
 
   .paragraph {
@@ -30,6 +37,23 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan */
     background-color: #fff; /* Warna latar belakang */
   }
+
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2xl; /* Adjust font size for smaller screens */
+    }
+
+    .about-section .container, 
+    .portfolio-section .container, 
+    .contact-section .container {
+        padding: 0 10px; /* Reduce padding on smaller screens */
+    }
+
+    .portfolio-section .grid-cols-1 {
+        grid-template-columns: 1fr; /* Ensure projects stack vertically on small screens */
+    }
+}
 
   /* Hero section styles */
   .hero-section {

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio LM Engineer</title>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="bg-gray-800 py-4 fixed w-full z-10">
+    <div class="container mx-auto flex items-center justify-between">
+      <a href="#" class="text-white text-2xl font-bold">LM Engineer Portofolio</a>
+      <div class="flex items-center space-x-4">
+        <a href="#about" class="text-white hover:text-gray-300 transition duration-300" onclick="smoothScroll('#about')">About</a>
+        <a href="#portfolio" class="text-white hover:text-gray-300 transition duration-300" onclick="smoothScroll('#portfolio')">Portfolio</a>
+        <a href="#character" class="text-white hover:text-gray-300 transition duration-300" onclick="smoothScroll('#character')">Dream Character</a>
+        <a href="#contact" class="text-white hover:text-gray-300 transition duration-300" onclick="smoothScroll('#contact')">Contact</a>
+      </div>
+    </div>
+  </nav>
+  
+  <script>
+  function smoothScroll(target) {
+      var targetElement = document.querySelector(target);
+      var startPosition = window.pageYOffset;
+      var targetPosition = targetElement.getBoundingClientRect().top + startPosition;
+      var distance = targetPosition - startPosition;
+      var startTime = null;
+      var duration = 800; // Adjust the duration as needed
+  
+      function animation(currentTime) {
+          if (startTime === null) startTime = currentTime;
+          var timeElapsed = currentTime - startTime;
+          var run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+          window.scrollTo(0, run);
+          if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+  
+      function easeInOutQuad(t, b, c, d) {
+          t /= d / 2;
+          if (t < 1) return c / 2 * t * t + b;
+          t--;
+          return -c / 2 * (t * (t - 2) - 1) + b;
+      }
+  
+      requestAnimationFrame(animation);
+  }
+  </script>
+  
+
+  <!-- Hero Section -->
+  <section id="hero" class="bg-gray-200 py-20 px-4 text-center hero-section">
+    <div class="container mx-auto">
+      <h1 class="text-4xl font-bold mb-4">Welcome to My Retro Portofolio!</h1>
+      <p class="text-lg text-gray-700">Fine tuning models and gaming enthusiast.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-4 about-section" data-aos="fade-up">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+      <div class="flex flex-col md:flex-row items-center justify-center">
+        <div class="md:w-1/2 mb-4 md:mb-0">
+          <img src="profile.jpg" alt="Profile Picture" class="rounded-full w-48 mx-auto">
+        </div>
+        <div class="md:w-1/2">
+          <p class="text-lg text-gray-700">I'm a passionate LM engineer with a focus on fine-tuning models. When I'm not working, you can find me indulging in my love for anime and gaming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="bg-gray-300 py-20 px-4 portfolio-section" data-aos="fade-up">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">My Work</h2>
+      Sedikit List Project:
+      <!-- Project Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="bg-white p-4 shadow-md rounded-md">
+          <h3 class="text-xl font-semibold mb-2">Project 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec vestibulum leo. Integer ac tortor nec velit fermentum bibendum.</p>
+        </div>
+        <div class="bg-white p-4 shadow-md rounded-md">
+          <h3 class="text-xl font-semibold mb-2">Project 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec vestibulum leo. Integer ac tortor nec velit fermentum bibendum.</p>
+        </div>
+        <div class="bg-white p-4 shadow-md rounded-md">
+          <h3 class="text-xl font-semibold mb-2">Project 3</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec vestibulum leo. Integer ac tortor nec velit fermentum bibendum.</p>
+        </div>
+        <!-- Add more projects as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Character Section -->
+  <section class="bg-gray-400 py-20 px-4 character-section" data-aos="fade-up">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">My Dream Character</h2>
+      <div class="flex flex-col md:flex-row items-center justify-center">
+        <div class="md:w-1/2 mb-4 md:mb-0">
+          <img src="dream_character.jpg" alt="Dream Character" class="rounded-full w-48 mx-auto">
+        </div>
+        <div class="md:w-1/2">
+          <p class="text-lg text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec vestibulum leo. Integer ac tortor nec velit fermentum bibendum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 px-4 contact-section" data-aos="fade-up">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Let's Connect!</h2>
+      <div class="flex items-center justify-center">
+        <a href="#" class="bg-gray-800 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-700">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-4 text-center text-white">
+    <div class="container mx-auto">
+      <p>&copy; 2024 LM Engineer Portofolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

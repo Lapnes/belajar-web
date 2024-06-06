@@ -1,0 +1,75 @@
+style.css
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d9b69b; /* Background color */
+    color: #4a4a4a; /* Text color */
+  }
+  
+  /* Navbar styles */
+  nav {
+    background-color: #94716b; /* Navbar background color */
+  }
+  
+  nav a {
+    color: #e8c8a1; /* Navbar link color */
+  }
+  
+  nav a:hover {
+    color: #4e7979; /* Navbar link hover color */
+  }
+  
+  /* Hero section styles */
+  .hero-section {
+    background-color: #e8c8a1; /* Hero section background color */
+  }
+  
+  .hero-section h1 {
+    color: #4a4a4a; /* Hero section text color */
+  }
+  
+  .hero-section p {
+    color: #7a7575; /* Hero section text color */
+  }
+  
+  /* About section styles */
+  .about-section {
+    background-color: #f4d9c7; /* About section background color */
+  }
+  
+  .about-section h2 {
+    color: #4a4a4a; /* About section text color */
+  }
+  
+  .about-section p {
+    color: #7a7575; /* About section text color */
+  }
+  
+  /* Portfolio section styles */
+  .portfolio-section {
+    background-color: #e8c8a1; /* Portfolio section background color */
+  }
+  
+  .portfolio-section h2 {
+    color: #4a4a4a; /* Portfolio section text color */
+  }
+  
+  /* Contact section styles */
+  .contact-section {
+    background-color: #94716b; /* Contact section background color */
+  }
+  
+  .contact-section h2 {
+    color: #e8c8a1; /* Contact section text color */
+  }
+  
+  .contact-section a {
+    background-color: #4e7979; /* Contact section button background color */
+    color: #f4d9c7; /* Contact section button text color */
+  }
+  
+  .contact-section a:hover {
+    background-color: #698c8c; /* Contact section button hover background color */
+  }
+  
